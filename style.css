@@ -1,0 +1,356 @@
+
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 600px;
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 20px;
+    /* background-color: aquamarine; */
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+
+    margin: 10px;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    color: whitesmoke;
+    text-shadow: 1px 2px 1px gray;
+    position: sticky;
+    top: 0;
+}
+
+#input-text {
+    padding: 6px;
+    width: 80%;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px;
+    flex-wrap: wrap;
+}
+
+.input-container {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgb(125, 125, 125);
+    outline: none;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-container:active,
+.input-container:hover {
+    border: 1.5px solid #171616;
+    box-shadow: 2px 3px 4px gray;
+    transform: scaleY(1.1);
+}
+
+#btn-add {
+    background-color: rgb(123, 245, 123);
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 7px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#btn-add:hover {
+    background-color: rgb(15, 244, 15);
+    transform: scaleY(1.1);
+    box-shadow: 1px 1px 1px gray;
+}
+.btn-add-icon{
+  font-size: 17px;
+  font-weight: 900;
+  color:whitesmoke;
+  padding-left: 4px;
+}
+
+#msg-box {
+    text-align: justify;
+    font-size: 14.5px;
+    color: red;
+   margin:10px ;
+   padding: 6px;
+   background-color: whitesmoke;
+   border-radius: 8px;
+  display: none;
+}
+
+.list-container {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    /* background-color: whitesmoke; */
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    margin: auto;
+    border: none;
+    border-radius: 9px;
+    overflow: auto;
+    padding: 15px;
+}
+.list-container ul {
+  padding: 0;
+}
+
+.list-container ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightyellow;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+.task-text {
+  flex: 1;
+  margin-right: 10px;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 700;
+  color: #424040;
+  font-family: cursive;
+  
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+ .icon-dlt-btn{
+   color:white;
+   font-size: 15px;
+   font-weight: 800;
+  
+ }
+ .icon-edit-btn
+{
+  color:white;
+   font-size: 15px;
+   font-weight: 800;
+}
+.edit-btn {
+  background-color: #ffc107;
+  color: white;
+  
+
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+.taskCounter{
+  position: absolute; 
+  bottom: 15px; 
+  left: 15px; 
+  color: rgb(248, 248, 248); 
+  font-weight: bold;
+  font-size: 18px;
+}
+/* Add this to your CSS file or <style> tag */
+.shake {
+  animation: shake 0.6s linear;
+}
+
+/* when new task add then create animation */
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+    color: #fda085;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* color: whitesmoke; */
+  }
+}
+
+.fade-in {
+  animation: fadeSlideDown 0.6s ease-in-out;
+}
+
+
+@keyframes shake {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-15px); }
+  50% { transform: translateY(15px); }
+  75% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .list-container ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-group {
+    margin-top: 8px;
+  }
+
+  .task-text {
+    margin-right: 0;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}
+
+
+/*  Responsive Design */
+@media only screen and (max-width: 768px) {
+    .input-section {
+        margin: 40px 10px;
+    }
+
+    .input-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    #input-text {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* #btn-add {
+        width: 100%;
+    } */
+     #btn-add {
+    background-color: rgb(123, 245, 123);
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    /* flex-direction: column; */
+    
+}
+
+    .btn-add-icon{
+  font-size: 15px;
+  font-weight: 400;
+  color:whitesmoke;
+  padding-left: 1px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    #btn-add {
+        font-size: 12px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+    }
+   
+
+    .btn-add-icon{
+  font-size: 15px;
+  font-weight: 400;
+  color:whitesmoke;
+  padding-left: 1px;
+}
+}
+
+.clear-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+ 
+}
+
+#clear-all {
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#clear-all:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  #clear-all {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 5px;
+    font-weight:700 ;
+  }
+}
